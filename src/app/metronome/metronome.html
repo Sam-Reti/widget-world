@@ -1,0 +1,12 @@
+<div class="metronome-card">
+  <div class="bpm-display">{{ bpm }} BPM</div>
+
+  <div class="controls">
+    <button (click)="updateTempo(-5)">−</button>
+    <button (click)="updateTempo(5)">+</button>
+  </div>
+
+  <button class="play" (click)="toggle()">
+    {{ isPlaying ? 'Stop' : 'Start' }}
+  </button>
+</div>

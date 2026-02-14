@@ -1,0 +1,93 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+:host * {
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.calculator {
+  width: 100%;
+  height: 100%;
+  max-width: 360px;
+  max-height: 100%;
+  background-color: rgb(71, 71, 108);
+  border-radius: 12px;
+  padding: 12px;
+  overflow: hidden;
+  display: flex;
+}
+
+.calculator form {
+  width: 100%;
+}
+
+.calculator form input {
+  border: 0;
+  outline: 0;
+  width: 68px;
+  height: 58px;
+  border-radius: 10px;
+  box-shadow:
+    -8px -8px 15px rgba(206, 59, 59, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.2);
+  background: transparent;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  margin: 8px;
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.08s ease;
+}
+
+.calculator form input:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow:
+    inset -4px -4px 8px rgba(255, 255, 255, 0.08),
+    inset 4px 4px 8px rgba(0, 0, 0, 0.35);
+}
+
+form .display {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+  padding: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+form .display input {
+  text-align: right;
+  flex: 1;
+  font-size: clamp(22px, 3vw, 36px);
+  box-shadow: none;
+  margin: 0;
+  width: 90%;
+  height: auto;
+}
+
+.calculator form input.operator {
+  color: rgb(201, 100, 237);
+}
+
+.calculator form input.equal {
+  color: rgb(100, 237, 201);
+  width: 152px;
+}

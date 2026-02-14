@@ -1,0 +1,11 @@
+<div class="stopwatch-card">
+  <div class="time">{{ display }}</div>
+
+  <div class="controls">
+    <button class="btn" (click)="toggle()">
+      {{ isRunning ? 'Pause' : 'Start' }}
+    </button>
+
+    <button class="btn secondary" (click)="reset()">Reset</button>
+  </div>
+</div>

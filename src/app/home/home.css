@@ -1,0 +1,127 @@
+/* ---------- App Shell ---------- */
+.page {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+
+  /* deep, modern gradient */
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(120, 87, 255, 0.25), transparent 60%),
+    radial-gradient(900px 500px at 80% 20%, rgba(0, 200, 255, 0.14), transparent 55%),
+    linear-gradient(180deg, #0b1020 0%, #0a0f1c 100%);
+}
+
+/* optional: subtle noise feel without images */
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.02));
+}
+
+/* ---------- Header ---------- */
+.hero {
+  padding: 18px 16px 6px;
+}
+
+h1 {
+  margin: 10px;
+  font-size: 2.6rem;
+  letter-spacing: 0.2px;
+  color: rgba(240, 245, 255, 0.92);
+  text-align: center;
+  font-family: sans-serif;
+}
+
+/* ---------- Grid ---------- */
+.grid {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, 160px);
+}
+
+.panel {
+  position: relative;
+  border-radius: 16px;
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 16px 45px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  background: radial-gradient(600px 180px at 50% 0%, rgba(255, 255, 255, 0.1), transparent 55%);
+}
+
+.clock {
+  grid-column: span 2;
+}
+
+.calculator {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+.weather {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.ip {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.pokemon {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.empty {
+  color: rgba(240, 245, 255, 0.55);
+  font-size: 13px;
+  letter-spacing: 0.2px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+}
+.panel.weather {
+  align-items: stretch;
+  justify-content: stretch;
+}

@@ -1,0 +1,22 @@
+<div class="weather-card">
+  <div class="search-bar">
+    <input [(ngModel)]="search" placeholder="City, State" />
+    <button (click)="checkWeather()">Search</button>
+  </div>
+
+  @if (weatherData) {
+    <div class="details">
+      <h2 class="city">{{ weatherData.name }}</h2>
+
+      @if (weatherIcon) {
+        <img class="icon" [src]="weatherIcon" alt="Weather icon" />
+      }
+
+      <div class="temp">{{ weatherData.main.temp | number: '1.0-0' }}°F</div>
+      <div class="meta">Humidity: {{ weatherData.main.humidity }}%</div>
+      <div class="meta">Wind: {{ weatherData.wind.speed | number: '1.0-0' }} mph</div>
+    </div>
+  } @else {
+    <div class="empty-state">Search a city to load weather.</div>
+  }
+</div>

@@ -1,0 +1,46 @@
+<div id="app">
+  <div id="pokemon">
+    @if (loading) {
+      <span class="status">Loading…</span>
+    }
+
+    @if (error) {
+      <span class="error">{{ error }}</span>
+    }
+
+    @if (data) {
+      <div class="pokemon-card" [attr.data-type]="primaryType">
+        <h2 class="pokemon-name">{{ data.name }}</h2>
+
+        <div class="img-wrap" [attr.data-type]="primaryType">
+          @if (imageUrl) {
+            <img [src]="imageUrl" [alt]="data.name" />
+          } @else {
+            <div class="no-img">No image</div>
+          }
+        </div>
+
+        <span class="pokemon-type">{{ primaryType }}</span>
+
+        <div class="pokemon-stats-grid">
+          <span class="pokemon-ability-one">{{ abilityOne }}</span>
+          <span class="pokemon-move-one">{{ move1 }}</span>
+          <span class="pokemon-move-two">{{ move2 }}</span>
+          <span class="pokemon-move-three">{{ move3 }}</span>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div id="controls">
+    <button id="button" type="button" (click)="fetchPokemon()">Click Me</button>
+    <input
+      id="textinput"
+      type="text"
+      name="pokemon"
+      placeholder="Choose Your Pokémon"
+      [(ngModel)]="query"
+      (keydown.enter)="fetchPokemon()"
+    />
+  </div>
+</div>

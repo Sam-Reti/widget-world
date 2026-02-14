@@ -1,0 +1,68 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+
+  background: linear-gradient(45deg, #7951ee, #981fbd);
+  color: #fff;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.clock span {
+  font-size: clamp(28px, 6vw, 56px);
+  width: clamp(40px, 7vw, 80px);
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.clock span:nth-child(1)::after {
+  content: 'Hours';
+}
+.clock span:nth-child(3)::after {
+  content: 'Min';
+}
+.clock span:nth-child(5)::after {
+  content: 'Sec';
+}
+
+.clock span::after {
+  font-size: 12px;
+  opacity: 0.75;
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}

@@ -1,0 +1,7 @@
+<div class="ip-card">
+  <button type="button" (click)="getIP()">Show My IP</button>
+
+  @if (ipAddress) {
+    <div class="ip">{{ ipAddress }}</div>
+  }
+</div>

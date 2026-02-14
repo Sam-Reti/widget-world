@@ -1,0 +1,37 @@
+.stopwatch-card {
+  padding: 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2b3050, #1c1f2b);
+  color: white;
+  width: 220px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  height: 130px;
+  justify-content: center;
+}
+
+.time {
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.secondary {
+  opacity: 0.85;
+}

@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="calculator">
+    <form (submit)="$event.preventDefault()">
+      <div class="display">
+        <input type="text" [value]="display" readonly />
+      </div>
+
+      <div>
+        <input type="button" value="AC" class="operator" (click)="clear()" />
+        <input type="button" value="DE" class="operator" (click)="del()" />
+        <input type="button" value="." class="operator" (click)="append('.')" />
+        <input type="button" value="/" class="operator" (click)="append('/')" />
+      </div>
+
+      <div>
+        <input type="button" value="7" (click)="append('7')" />
+        <input type="button" value="8" (click)="append('8')" />
+        <input type="button" value="9" (click)="append('9')" />
+        <input type="button" value="*" class="operator" (click)="append('*')" />
+      </div>
+
+      <div>
+        <input type="button" value="4" (click)="append('4')" />
+        <input type="button" value="5" (click)="append('5')" />
+        <input type="button" value="6" (click)="append('6')" />
+        <input type="button" value="-" class="operator" (click)="append('-')" />
+      </div>
+
+      <div>
+        <input type="button" value="1" (click)="append('1')" />
+        <input type="button" value="2" (click)="append('2')" />
+        <input type="button" value="3" (click)="append('3')" />
+        <input type="button" value="+" class="operator" (click)="append('+')" />
+      </div>
+
+      <div>
+        <input type="button" value="00" (click)="append('00')" />
+        <input type="button" value="0" (click)="append('0')" />
+        <input type="button" value="=" class="equal operator" (click)="calculate()" />
+      </div>
+    </form>
+  </div>
+</div>
