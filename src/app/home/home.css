@@ -120,3 +120,67 @@ h1 {
   align-items: stretch;
   justify-content: stretch;
 }
+
+/* Mobile */
+@media (max-width: 940px) {
+  .page {
+    width: 100%;
+    overflow: auto; /* allow scroll on small screens */
+  }
+
+  .hero {
+    padding: 16px 14px 0;
+  }
+
+  h1 {
+    margin: 8px 0 6px;
+    font-size: 1.9rem;
+  }
+
+  .grid {
+    padding: 14px;
+    gap: 12px;
+
+    /* single column stack */
+    grid-template-columns: 1fr;
+    grid-template-rows: none; /* let items size naturally */
+  }
+
+  .panel {
+    border-radius: 14px;
+    padding: 12px;
+    min-height: 170px; /* consistent card height */
+  }
+
+  /* remove hover effects on touch */
+  .panel:hover {
+    transform: none;
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* force everything to full width in the stack */
+  .clock,
+  .calculator,
+  .weather,
+  .ip,
+  .pokemon {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  /* optional: make the calculator taller since it's "main" */
+  .calculator {
+    min-height: 360px;
+  }
+
+  .weather {
+    min-height: 260px;
+  }
+
+  .pokemon {
+    min-height: 260px;
+  }
+}
