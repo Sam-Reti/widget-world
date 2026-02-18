@@ -12,6 +12,7 @@ export class Clock implements OnInit {
   sec = '00';
 
   timerId: number | null = null;
+
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {

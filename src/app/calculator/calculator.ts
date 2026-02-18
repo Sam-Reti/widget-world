@@ -23,7 +23,7 @@ export class Calculator {
 
   calculate() {
     try {
-      this.display = Function('"use strict"; return (' + this.display + ')')().toString();
+      this.display = Function('return (' + this.display + ')')().toString();
     } catch {
       this.display = 'Error';
     }
